@@ -2,6 +2,8 @@
 
 ### 11번 뱀 327p
 https://www.acmicpc.net/problem/3190
+
+https://github.com/HongYouBin/ecote/blob/main/11.cpp
 - 차근차근 설명에 나온 방법으로 구현하면 쉬운 문제였다. 침착하게 대응하지 못했다.
 - 14행 
   - 함수를 만들 때 삼항연산자를 사용하면 간단하게 작성할 수 있다. 조건문이 다양하게 나올 때 삼항연산자를 사용하도록 할 것

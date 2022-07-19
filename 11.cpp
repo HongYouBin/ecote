@@ -12,7 +12,7 @@ string s;
 int direction;
 
 void turn(char state) {
-	if (state == 'L') direction = direction == 3 ? 0 : direction + 1;
+	if (state == 'L') direction = direction == 0 ? 3 : direction - 1;
 	else direction = (direction + 1) % 4;
 }
 
@@ -23,7 +23,7 @@ int dy[4] = { 1,0,-1,0 };
 int main() {
 	ios::sync_with_stdio(0);
 	cin.tie(0), cout.tie(0);
-	
+
 	direction = 0;
 	cin >> n >> k;
 	int row, col;
@@ -38,14 +38,14 @@ int main() {
 		cin >> second >> dir;
 		que.push({ second, dir });
 	}
-	arr[row][col] = 2;
 	lastPos.push({ 1, 1 });
 	int time = 0;
 	int x = 1, y = 1;
+	arr[x][y] = 2;
 
-	while (true) 
+	while (true)
 	{
-		int nextX = x+ dx[direction];
+		int nextX = x + dx[direction];
 		int nextY = y + dy[direction];
 
 		if (nextX < 1 || n < nextX || nextY < 1 || n < nextY || arr[nextX][nextY] == 2) break;
@@ -64,7 +64,7 @@ int main() {
 		x = nextX;
 		y = nextY;
 		time++;
-		if (time == que.front().first)
+		if (!que.empty() && time == que.front().first)
 		{
 			turn(que.front().second);
 			que.pop();

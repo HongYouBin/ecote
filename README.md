@@ -18,6 +18,7 @@ https://github.com/HongYouBin/ecote/blob/main/11.cpp
   - 왼쪽 위부터 시작해 1, 1부터 시작했어야 했지만 실수로 오른쪽 위부터 시작하도록 좌표를 설정하는 실수를 했다.
 - 14행
   - 함수 turn에서 왼쪽으로 방향을 바꿀 때 direction - 1 연산을 해줘야 되지만 더했다. 정신차리고 실수하지 않도록 확인해야 한다.
+  
 ### 12번 기둥과 보 설치 329p
 https://programmers.co.kr/learn/courses/30/lessons/60061
 
@@ -36,3 +37,19 @@ https://github.com/HongYouBin/ecote/blob/main/12.cpp
   - 앞에서 말했듯이 조건을 하나하나 확인하여 따져본다.
 - 14행, 15행, 21행
   - 이번 문제에서 처리가 곤란했다. 왼쪽 보와 오른쪽 보를 따로 확인했어야 했는데 같이 확인하여 당연히 값이 달라 false가 뜨게 되었다. 조건을 확실하게 따져보고 틀린 부분이 없나 검토해봐야한다.
+
+### 13번 치킨 배달 333p
+https://www.acmicpc.net/problem/15686
+
+https://github.com/HongYouBin/ecote/blob/main/13.cpp
+https://github.com/HongYouBin/ecote/blob/main/13-1.cpp
+
+- 크게 2가지 방법으로 문제를 해결하였다. 두가지 방법 모두 brute force 방법으로 해결 가능하다.
+- 1
+  - 조합을 이용한다. 13_C_M 이기 때문에 경우의 수가 작게 나타난다.
+  - C++에서 조합을 하는 방법을 헤맸다. 답을 보고 검색을 한 후에 해결 가능했다. next_permutaion이라는 stl을 사용했다. 앞으로 많이 나올 수 있으니 외워야 된다(https://blog.uniony.me/cpp/next_permutation/). 40행에서 46행까지 구현되었다. 구현할 때 어려웠던 부분은 앞 부분이 모두 0이고 뒷부분이 모두 1이어야 순열처럼 움직인다. 따라서 36행 주석처럼 구현하면 안되고 37행 처럼 앞은 0 뒤는 1로 구현해줘야 한다. 또한 vector에서 end를 작성할 때 헷갈린 부분이 있었는데 end는 vector 마지막 부분 다음의 iterator를 반환한다.
+  - 11항
+    - check함수를 이용해 하나하나 계산한다. 
+- 2
+  - dfs방법으로 문제를 해결한다.
+    - 아이디어를 떠올리는 것은 쉬웠으나 매번 dfs 함수에 접근할 때마다 값을 계산하려 했고 종결 조건을 설정하는 과정에서 애를 먹었다. 답을 참고하니 visited 배열을 만들어서 방문할 때마다 true 값을 넣어 true 값이 나올 때만 계산하는 방법을 이용했다. 

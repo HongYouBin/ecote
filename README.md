@@ -42,6 +42,7 @@ https://github.com/HongYouBin/ecote/blob/main/12.cpp
 https://www.acmicpc.net/problem/15686
 
 https://github.com/HongYouBin/ecote/blob/main/13.cpp
+
 https://github.com/HongYouBin/ecote/blob/main/13-1.cpp
 
 - 크게 2가지 방법으로 문제를 해결하였다. 두가지 방법 모두 brute force 방법으로 해결 가능하다.

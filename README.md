@@ -1,4 +1,5 @@
 # ecote
+## https://github.com/ndb796/python-for-coding-test
 
 ### 10번 자물쇠와 열쇠 325p
 
@@ -117,3 +118,13 @@ https://github.com/HongYouBin/ecote/blob/main/16_1.cpp
   - https://github.com/HongYouBin/ecote/blob/main/16_1.cpp
   - 37행부터 재귀를 사용하여 전체에서 3개의 조합을 구하는 경우의 수를 구현했다. next_permutation을 사용하지 않고 조합을 구했다. 아이디어가 괜찮았다. 암기 필요.
   - 38행부터 벽을 3개 세운 순간(cnt == 3이 된 순간) 47행부터 dfs를 실행하여 바이러스를 퍼트린다. 간단한 아이디어이다.
+  
+### 16번 연구소 341p
+
+https://www.acmicpc.net/problem/18405
+
+https://github.com/HongYouBin/ecote/blob/main/17.cpp
+
+- bfs를 써서 바이러스의 순서에 맞게 큐에 넣으면 되는 아이디어는 쉽게 떠올랐다. 구현하는데 크게 문제될 것도 없었다. 어렵지 않은 문제지만 결과적으로 문제를 틀렸는데 바이러스를 순서에 맞게 넣지 않았다. 예시에는 행과 열의 증가에 맞게 바이러스의 순서가 차근차근 들어가서 답이 틀리지 않았는데, 바이러스의 순서가 뒤죽박죽일 때를 고려하지 않았다.  좀더 조건을 꼼꼼하게 따져봐야 한다.
+- 답지를 보니 queue와 vector에 넣을 virus 클래스를 만들었고 정렬을 위해 bool operator를 수정하였다. 나는 pair를 써서 구현했다. 뭐가 좋다 나쁘다 할 수 없지만 class를 만들고 operator를 수정하는 아이디어도 기억하는 것이 좋을 것 같다.
+  - https://github.com/ndb796/python-for-coding-test/blob/master/13/3.cpp

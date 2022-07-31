@@ -186,3 +186,39 @@ https://github.com/HongYouBin/ecote/blob/main/22.cpp
 - 51행 매개변수로 제시된 배열 board를 간단하게 처리하기 위해 newBoard로 만들고 가장자리를 1로 채웠다.
 - 23행 68행 check함수를 구현하여 움직이고 회전할 수 있는 조건인지 따져보았다. 문제에 제시된 조건을 침착하게 구현할 필요가 있다.
 - 78행에서 이미 방문한 위치인지 나타내는 visited vector를 추가하지 않아서 시간 초과가 발생했다. 실수하지 않도록 조심해야 한다.
+
+### 23번 국영수 359p
+
+https://www.acmicpc.net/problem/10825
+
+https://github.com/HongYouBin/ecote/blob/main/23.cpp
+
+- 정렬 조건 설정을 위해 26행에 cmp 함수를 만들었다. 답 24행을 보면 정렬 조건을 operator 오버로딩으로 설정했다. sort로 정렬하면 default 값이 오름차순이기 때문에 '<' 연산자를 오버로딩했다.
+  - https://forswdev.tistory.com/53
+
+### 24번 안테나 360p
+
+https://www.acmicpc.net/problem/18310
+
+- 첫 번째 시도에서 for문을 써서 경우의 수 전부를 계산했고, 시간초과가 떴다. 연산 횟수를 줄일 필요가 있었다. 두 번째 시도는 각 위치의 평균값이 답이라고 생각했다가 틀렸다. 답은 전체 위치의 정렬한 후의 중간값이었다.
+  - https://livlikwav.github.io/algorithm/boj-18310/
+
+### 25번 실패율 361p
+
+https://school.programmers.co.kr/learn/courses/30/lessons/42889
+
+https://github.com/HongYouBin/ecote/blob/main/25.cpp
+
+- 잘 구현했다고 생각했지만 계속 오답이 나왔다. 이유를 찾아보니 실수로 11행에 return을 뺐었다. 당연히 cmp의 return 값이 안나와서 오답이 나왔다. 실수하지 않도록 주의해야 한다.
+- 20행에 인자 값을 찾는 count 함수를 사용했다.
+  - https://notepad96.tistory.com/45
+
+### 25번 실패율 361p
+
+https://www.acmicpc.net/problem/1715
+
+https://github.com/HongYouBin/ecote/blob/main/26.cpp
+
+- 우선순위 큐를 이용해 매번 가장 작은 두 수를 꺼내 더하고 다시 우선순위 큐에 넣는 방법으로 문제를 해결했다. 문제를 그리디 알고리즘으로도 분류 가능하다.
+- 우선순위 큐를 사용할 때 넣으면 가장 큰 수가 top에 존재하게 된다. 이 문제는 가장 작은 수가 top에 있어야 하기 때문에 비교 연산자를 따로 설정을 해줘야 된다.
+  - https://dolphins-it.tistory.com/43

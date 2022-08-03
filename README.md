@@ -223,7 +223,7 @@ https://github.com/HongYouBin/ecote/blob/main/26.cpp
 - 우선순위 큐를 사용할 때 넣으면 가장 큰 수가 top에 존재하게 된다. 이 문제는 가장 작은 수가 top에 있어야 하기 때문에 비교 연산자를 따로 설정을 해줘야 된다.
   - https://dolphins-it.tistory.com/43
 
-### 27번 정렬된 배열에서 특정 수의 개수 구하기p
+### 27번 정렬된 배열에서 특정 수의 개수 구하기 367p
 
 https://github.com/HongYouBin/ecote/blob/main/27_1.cpp
 https://github.com/HongYouBin/ecote/blob/main/27_2.cpp
@@ -241,3 +241,31 @@ https://github.com/HongYouBin/ecote/blob/main/27_2.cpp
     - 둘다 시간 복잡도가 O(N)이기 때문에 이진 탐색에서 자주 활용하게 될 라이브러리이다. 활용하기 위해선 이미 배열이 정렬되어 있어야 한다. 관련된 문제가 나오면 잊지 않고 사용해야 한다.
     - https://cocoon1787.tistory.com/324
     - https://jokerkwu.tistory.com/128
+
+### 28번 고정점 찾기 368p
+
+https://github.com/HongYouBin/ecote/blob/main/28.cpp
+
+- O(log N)으로 알고리즘을 설계해야 하기 때문에 이진 탐색을 이용해야 한다.
+- arr[a] = b 라고 할 때 a > b 인 경우
+  - a-1 > b-y (y>=1)
+  - a+1 ? b+x (x>=1), 두 수의 대소 관계가 어떻게 될지 모른다.
+    - 따라서 왼쪽을 볼 필요가 없어지기 때문에(b - y 가 무조건 작기 때문에 a와 b가 같게될 수 없다.) 오른쪽을 탐색하면 된다.
+- 반대로 a < b 인 경우
+  - a - 1 ? b - y (y>=1), 두 수의 대소 관계는 모른다.
+  - a + 1 < b + x (x>=1)
+    - 위와 비슷한 이유로 오른쪽을 볼 필요가 없기 때문에 왼쪽을 탐색하면 된다.
+
+### 29번 공유기 설치 369p
+
+https://www.acmicpc.net/problem/2110
+
+https://github.com/HongYouBin/ecote/blob/main/29.cpp
+
+- 최소의 공유기 거리를 설정하여 이진탐색으로 구현하였다. 정확히는 파라메트릭 서치를 이용하였다. 가장 인접한 공유기 사이의 거리를 최대로 하는 값이 무엇인가? -> 공유기 사이의 최소 거리를 r로 했을 때 모든 공유기를 설치할 수 있는가? (예 or 아니오) 로 문제를 바꿔 풀었다. 지금 학습하고 있는 내용이 이진 탐색이라 아이디어를 떠올릴 수 있었지만, 이진 탐색이라는 힌트가 없었을 때에는 파라메트릭 서치를 떠올리기 쉽지 않았을 것이다. 조건이 있는 최대, 최소 값을 구하는 경우 파라메트릭 서치를 사용할 수 있도록 훈련해야 된다.
+
+  - https://velog.io/@lake/%EC%9D%B4%EB%B6%84%ED%83%90%EC%83%89-%ED%8C%8C%EB%9D%BC%EB%A9%94%ED%8A%B8%EB%A6%AD-%EC%84%9C%EC%B9%98Parametric-Search
+  - https://ialy1595.github.io/post/parametric-search/
+  - https://marades.tistory.com/7
+
+- 아이디어를 다 구현해 놓고도 답을 틀렸는데 설치한 공유기 숫자를 제대로 세지 못하도록 설계를 하는 실수를 했다.(24행, 29행)

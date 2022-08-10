@@ -289,3 +289,32 @@ https://github.com/HongYouBin/ecote/blob/main/30.cpp
         - https://novlog.tistory.com/137
   - 아이디어에 맞춰 잘 구현했는데도 시간초과가 발생했다. 37행이 문제였다. vector<string> word로 매개변수를 구현했는데 배열 값을 복사하는 과정에서 시간 초과가 발생한 것 같다. '&' 참조를 이용하면 시간이 절약 된다. 비슷한 이유로 다른 사람의 답을 볼 때 배열과 관련된 for문을 보면 모두 참조를 이용했다. 46행의 for문을 -> for(string &word : words) 형식으로 바꿔서 구현하면 시간이 단축된다. 잊지 말고 활용해야 한다.
 - 다른 풀이를 보니 이진 탐색말고 해시를 이용하여 풀었다. words의 string과 "?"을 조합해서 만들 수 있는 모든 경우의 수를 만든 후 map을 이용하여 해결했다. 2회독 할 때 이진 탐색이랑 해시 두가지 방법 모두 이용해볼 예정이다.
+
+### 31번 금광 375p
+
+https://github.com/HongYouBin/ecote/blob/main/31.cpp
+
+- 해당 열과 칸에 해당했을 때 최대로 얻을 수 있는 금의 크기를 담은 dp 배열을 만들었다. 배열을 채우는 방법은 왼쪽 위, 왼쪽, 왼쪽 아래 중 가장 큰 수를 구한 후 그 칸에 해당하는 금광을 더하면 배열이 완성 된다.
+  - dp[n][m] = max(dp[n+1][m-1], dp[n][m-1], dp[n-1][m-1]) 로 점화식을 세웠다.
+
+### 32번 정수 삼각형 376p
+
+https://www.acmicpc.net/problem/1932
+
+https://github.com/HongYouBin/ecote/blob/main/32.cpp
+
+- 31번 문제와 비슷하게 풀었다. 배열을 삼각형으로 만들면 내려갈 수 있는 칸이 아래칸, 아래에서 오른쪽 칸으로 움직일 수 있다.
+  - dp[n][m] = max(dp[n-1][m], dp[n-1][m-1]) 로 점화식을 세웠다.
+
+### 33번 정수 삼각형 377p
+
+https://www.acmicpc.net/problem/14501
+
+https://github.com/HongYouBin/ecote/blob/main/33_1.cpp
+https://github.com/HongYouBin/ecote/blob/main/33_2.cpp
+
+- 시험장에서 문제를 보면 다이나믹 프로그래밍이라는 아이디어를 떠올리기 쉽지 않았을 것 같다.
+  - t배열을 거꾸로 생각하면 된다. x일에 얻는 최대 값은 {x+t[x]일의 최대값+x일에 해당하는 값, x일 이후부터 n일 사이까지 최대값} 을 비교한 후 큰 값으로 설정하면 된다.
+    - dp[x] = max(dp[x + t[x]] + p[x], maxValue);
+- dp로 풀지 않고 완전탐색으로도 구현했다. n의 최대값이 15이고, 시간 제한이 2초이기 때문에 완전탐색으로도 구현 가능하다.
+  - next_permutation 이용해서 모든 조합의 경우의 수를 구한 후 최대 값을 구했다.

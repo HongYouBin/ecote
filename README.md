@@ -318,3 +318,28 @@ https://github.com/HongYouBin/ecote/blob/main/33_2.cpp
     - dp[x] = max(dp[x + t[x]] + p[x], maxValue);
 - dp로 풀지 않고 완전탐색으로도 구현했다. n의 최대값이 15이고, 시간 제한이 2초이기 때문에 완전탐색으로도 구현 가능하다.
   - next_permutation 이용해서 모든 조합의 경우의 수를 구한 후 최대 값을 구했다.
+
+### 34번 병사 배치하기 380p
+
+https://www.acmicpc.net/problem/18353
+
+https://github.com/HongYouBin/ecote/blob/main/34.cpp
+
+- 가장 긴 증가하는 부분 수열로 문제를 풀면 된다.
+
+  - https://www.acmicpc.net/problemset?sort=ac_desc&algo=43
+  - https://seohyun0120.tistory.com/entry/%EA%B0%80%EC%9E%A5-%EA%B8%B4-%EC%A6%9D%EA%B0%80%ED%95%98%EB%8A%94-%EB%B6%80%EB%B6%84-%EC%88%98%EC%97%B4LIS-%EC%99%84%EC%A0%84-%EC%A0%95%EB%B3%B5-%EB%B0%B1%EC%A4%80-%ED%8C%8C%EC%9D%B4%EC%8D%AC
+  - https://namu.wiki/w/%EC%B5%9C%EC%9E%A5%20%EC%A6%9D%EA%B0%80%20%EB%B6%80%EB%B6%84%20%EC%88%98%EC%97%B4#toc
+
+- 예전에 풀어본 경험이 있는 문제 유형이지만 시간이 흘러 비슷한 유형을 다시 풀어보니 아이디어를 떠올리지 못했다.
+- 가장 긴 증가하는 부분 수열을 이진 탐색과 결합하여 풀 수 있는데 lower_bound를 이용하여 문제를 풀 수 있다. 처리해야 하는 값이 크면 사용하면 된다.
+  - https://www.acmicpc.net/problem/12015
+  - https://github.com/HongYouBin/ecote/blob/main/34(2).cpp
+  - https://st-lab.tistory.com/285
+
+### 35번 못생긴 수 381p
+
+https://github.com/HongYouBin/ecote/blob/main/35.cpp
+
+- 우선순위 큐를 이용하였다. 큐에 가장 큰 수가 root에 오도록 만들었다. 큐의 top을 뺀 후 이미 넣은 수면 넘어가고 넣지 않은 수면 vector에 넣은 후 맵으로 기록을 했다.
+- 답을 보니 나와 다른 방법으로 풀었다. 이미 2, 3, 5로만 약수를 갖는 수에 다시 2, 3, 5를 곱하면 된다는 아이디어와 못생긴 수들을 작은 수부터 차례대로 확인하면 된다는 아이디어는 동일하나 구현을 다르게 했다. 내가 푼 방법보다 시간복잡도가 적고 메모리를 적게 소모하여 더 효율적인 방법이다.

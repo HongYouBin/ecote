@@ -308,7 +308,7 @@ https://github.com/HongYouBin/ecote/blob/main/32.cpp
 - 31번 문제와 비슷하게 풀었다. 배열을 삼각형으로 만들면 내려갈 수 있는 칸이 아래칸, 아래에서 오른쪽 칸으로 움직일 수 있다.
   - dp[n][m] = max(dp[n-1][m], dp[n-1][m-1]) 로 점화식을 세웠다.
 
-### 33번 정수 삼각형 377p
+### 33번 퇴사 377p
 
 https://www.acmicpc.net/problem/14501
 
